@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Management Application
 
-## Getting Started
+A fully functional, responsive Product Management application built with Next.js, React, and Tailwind CSS. The application allows users to perform CRUD (Create, Read, Update, Delete) operations on a list of products. Data is persisted on the client-side using `localStorage` via Zustand, ensuring a seamless experience without the need for a backend service.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Product CRUD**: Create, read, update, and delete product items.
+- **Client-Side Persistence**: Data is preserved across sessions using `localStorage`.
+- **Search & Filtering**: Quickly find products using search functionality and applied filters.
+- **Responsive Layout**: A modern grid layout that adapts to various screen sizes.
+- **Dark Mode Support**: Built-in light and dark themes using `next-themes`.
+- **Form Validation**: Robust client-side validation using React Hook Form and Zod.
+- **Toast Notifications**: Interactive user feedback via `sonner`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **UI Library**: [React](https://react.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) (with `persist` middleware for `localStorage`)
+- **Forms & Validation**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Notifications**: [Sonner](https://sonner.emilkowal.ski/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup Instructions
 
-## Learn More
+To get the project running locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository** (if applicable) or download the source code.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Navigate into the project directory**:
+   ```bash
+   cd "Product Management"
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Install dependencies**:
+   Using `npm`:
+   ```bash
+   npm install
+   ```
+   *(Or alternatively, `yarn install` or `pnpm install`)*
 
-## Deploy on Vercel
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Open the application**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Assumptions or Improvements
+
+### Assumptions
+
+- **Client-Side Data**: It's assumed that this application is intended to run fully on the client for demonstration or single-user purposes, hence the choice of `localStorage` (via Zustand persist) instead of an actual backend database.
+- **Modern Browsers**: Assumes the user is running a modern browser that fully supports `localStorage` and modern CSS features (like Grid and Flexbox).
+- **Development Environment**: Assumes Node.js is installed on the machine running the project.
+
+### Potential Improvements
+
+- **Backend Integration**: Transitioning from `localStorage` to a real database (e.g., PostgreSQL, MongoDB) using Next.js API routes or a separate backend server. This would allow for multi-user support, authentication, and data synchronization across devices.
+- **Authentication**: Implementing user authentication and authorization using tools like NextAuth (Auth.js) or Clerk so users can manage their own distinct product catalogs securely.
+- **Pagination / Infinite Scroll**: Adding pagination or infinite scrolling for the product grid to improve performance and user experience if the product list grows to hundreds or thousands of items.
+- **Image Upload Integration**: Connecting the app to a storage bucket (like AWS S3, Cloudinary, or Supabase Storage) to allow users to securely upload and host real image files instead of relying on external URLs.
+- **Automated Testing**: Implementing End-to-End (E2E) testing with Cypress or Playwright, along with comprehensive unit tests using Jest or Vitest, to ensure the application remains stable and bug-free as new features are introduced.
+- **Advanced Filtering**: Adding capabilities to filter by price range, multiple categories, rating, or stock status.

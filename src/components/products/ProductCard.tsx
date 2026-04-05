@@ -24,6 +24,8 @@ export function ProductCard({ product, onEdit, onDelete }: ProductCardProps) {
     <>
       <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group bg-card/50 backdrop-blur-sm">
         <div className="relative aspect-video w-full bg-muted overflow-hidden">
+          
+         
           {!imgError && product.image ? (
             <img
               src={product.image}
@@ -35,7 +37,9 @@ export function ProductCard({ product, onEdit, onDelete }: ProductCardProps) {
             <div className="flex items-center justify-center w-full h-full text-muted-foreground">
               <ImageIcon className="w-12 h-12 opacity-20" />
             </div>
-          )}
+          )} 
+
+
           <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <Button
               size="icon"

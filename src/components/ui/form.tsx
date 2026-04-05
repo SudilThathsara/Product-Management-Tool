@@ -12,8 +12,6 @@ import {
 } from "react-hook-form"
 
 import { cn } from "@/lib/utils"
-// import { Label } from "@/components/ui/label" 
-// We just use a regular label if there are issues, but we have Label.
 import { Label } from "@/components/ui/label"
 
 const Form = FormProvider
